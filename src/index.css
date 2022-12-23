@@ -600,6 +600,19 @@ header .search-toggle img {
   left: -6%;
   z-index: 1;
 }
+.best-of-us .showcase h3 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.best-of-us .showcase h3 img {
+  max-width: 100%;
+}
+.best-of-us .showcase span {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 .best-of-us .advisor {
   padding: 50px 0 0 130px;
 }
@@ -1482,6 +1495,13 @@ footer .footer-copy p {
   }
   .best-of-us .showcase .advisor div ul:not(:last-child) {
     margin-right: 0px;
+  }
+  .best-of-us .showcase h3 {
+    flex-direction: column;
+  }
+  .best-of-us .showcase h3 span img {
+    width: 200px;
+    height: 230px;
   }
   .best-of-us .advisor div ul:not(:last-child) {
     margin-right: 15px;

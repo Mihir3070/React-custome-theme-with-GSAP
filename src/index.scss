@@ -267,10 +267,14 @@ header{
     img{display: block;}
     .main-image{position: relative;}
     .pup-vector{display: block; position: absolute; bottom: 21%; left: -6%; z-index: 1;}
+    h3{display: flex;align-items: center; gap: 30px; img{max-width: 100%;}}
+    span{display: flex;flex-direction: column;gap: 30px;}
   }
   .advisor{padding: 50px 0 0 130px;
     .overline{margin-bottom: 18px;}
-    h2{font-weight: 500; font-size: 40px; line-height: 46px; color: $dark-text; margin-bottom: 18px; max-width: 460px;}
+    h2{
+      font-weight: 500; font-size: 40px; line-height: 46px; color: $dark-text; margin-bottom: 18px; max-width: 460px;
+    }
     p{font-weight: 400; font-size: 15px; line-height: 26px; color: $light-text; margin-bottom: 18px;}
     p:last-child{background-color: red;}
 
@@ -633,6 +637,7 @@ footer{
       .pup-vector{height: 60px;}
     .advisor div ul:not(:last-child){margin-right: 0px;}
     }
+    .showcase h3{flex-direction: column; span img{width: 200px;height: 230px;}}
     .advisor div ul:not(:last-child){margin-right: 15px;}
     .advisor{
       div{

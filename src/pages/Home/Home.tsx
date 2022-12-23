@@ -1,6 +1,6 @@
 
 import { Button, Card, CardContent, Container, FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material'
-import { arrowDown, balloon, callIcon, curvedDown, curvedUp, discussinIcon, frameMain, happy, heroImage, heroVector1, heroVector11, heroVector2, heroVector22, heroVector3, locationIcon, mailIcon, reportingIcon, rightTriangleImage, saveVector1, saveVector2, strategyIcon, trophy, users, workVectorLeft, workVectorRight } from '../../assets/images';
+import { arrowDown, balloon, callIcon, curvedDown, curvedUp, discussinIcon, frame1, frame2, frame3, frameMain, happy, heroImage, heroVector1, heroVector11, heroVector2, heroVector22, heroVector3, locationIcon, mailIcon, reportingIcon, rightTriangleImage, saveVector1, saveVector2, strategyIcon, trophy, users, workVectorLeft, workVectorRight } from '../../assets/images';
 import Slider from "react-slick";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
@@ -64,19 +64,6 @@ export const Home = () => {
         gsap.from(".hero p", 1, { opacity: 0, y: 40 })
         gsap.from(".hero h2", 1, { opacity: 0, y: 40, delay: .5 })
         gsap.from(".hero .hero-btn", 1, { opacity: 0, y: 40, delay: .8 })
-
-
-        // Image Animation
-        let scrubHeroImg = gsap.timeline({
-            scrollTrigger: {
-                trigger: heroAnimation,
-                scrub: 1,
-                pin: false,
-                start: "0%",
-                end: "400px",
-            },
-        });
-        scrubHeroImg.fromTo(".hero-images .main-image", { scale: 1 }, { scale: .8 }, "<");
 
 
         const parallaxContainer = document.getElementById('parallax-container');
@@ -159,7 +146,9 @@ export const Home = () => {
                 end: "0",
             },
         });
-        scrubImg.fromTo(".best-of-us .main-image", { scale: 0.8 }, { scale: 1 }, "<");
+        scrubImg.fromTo(".best-of-us .animation-first", { scale: 0.8 }, { scale: 1 }, "<");
+        scrubImg.fromTo(".best-of-us .animation-second", { scale: 0.8 }, { scale: 1,delay:.2 }, "<");
+        scrubImg.fromTo(".best-of-us .animation-third", { scale: 0.8 }, { scale: 1,delay:.4 }, "<");
     }, []);
 
 
@@ -309,10 +298,10 @@ export const Home = () => {
                                 <Button variant='contained' className='hero-btn' title="Get Started">Get Started</Button>
                             </div>
                             <div className='hero-images'>
-                                <img src={heroImage} alt="hero" className='main-image' />
+                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3"/>
                                 <img src={heroVector1} alt="Blob" className='top parallax' data-speed-x="10" data-speed-y="10" />
-                                <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="10" data-speed-y="10" />
-                                <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="10" data-speed-y="10" />
+                                <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="8" data-speed-y="8" />
+                                <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="6" data-speed-y="6" />
                             </div>
                         </Container>
                     </div>
@@ -327,10 +316,10 @@ export const Home = () => {
                                 <Button variant='contained' className='hero-btn' title="Get Started">Get Started</Button>
                             </div>
                             <div className='hero-images'>
-                                <img src={heroImage} alt="hero" className='main-image' />
+                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3"/>
                                 <img src={heroVector1} alt="Blob" className='top parallax' data-speed-x="10" data-speed-y="10" />
-                                <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="10" data-speed-y="10" />
-                                <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="10" data-speed-y="10" />
+                                <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="8" data-speed-y="8" />
+                                <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="6" data-speed-y="6" />
                             </div>
                         </Container>
                     </div>
@@ -345,10 +334,10 @@ export const Home = () => {
                                 <Button variant='contained' className='hero-btn' title="Get Started">Get Started</Button>
                             </div>
                             <div className='hero-images'>
-                                <img src={heroImage} alt="hero" className='main-image' />
+                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3"/>
                                 <img src={heroVector1} alt="Blob" className='top parallax' data-speed-x="10" data-speed-y="10" />
-                                <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="10" data-speed-y="10" />
-                                <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="10" data-speed-y="10" />
+                                <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="8" data-speed-y="8" />
+                                <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="6" data-speed-y="6" />
                             </div>
                         </Container>
                     </div>
@@ -363,7 +352,13 @@ export const Home = () => {
                                 <div className='showcase'>
                                     <h3 ref={cusTimeline3}>
                                         <img src={saveVector1} alt="blob" className='pup-vector' />
-                                        <img src={frameMain} alt="users" className='main-image' />
+                                        <span>
+                                            <img src={frame1} alt="user with prop" className='animation-first'/>
+                                            <img src={frame2} alt="user with prop" className='animation-third'/>
+                                        </span>
+                                        <span>
+                                            <img src={frame3} alt="user with prop" className='animation-second'/>
+                                        </span>
                                     </h3>
                                 </div>
                             </Grid>
