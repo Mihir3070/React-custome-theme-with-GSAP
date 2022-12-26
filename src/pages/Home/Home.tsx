@@ -73,7 +73,6 @@ export const Home = () => {
         document.addEventListener("mousemove", function (event) {
             if (parallaxContainer) {
                 const pageX = event.pageX - (parallaxContainer.getBoundingClientRect().width * 0.5);
-                console.log(parallaxContainer);
                 const pageY = event.pageY - (parallaxContainer.getBoundingClientRect().height * 0.5);
 
 
@@ -146,9 +145,9 @@ export const Home = () => {
                 end: "0",
             },
         });
-        scrubImg.fromTo(".best-of-us .animation-first", { scale: 0.8 }, { scale: 1 }, "<");
-        scrubImg.fromTo(".best-of-us .animation-second", { scale: 0.8 }, { scale: 1,delay:.2 }, "<");
-        scrubImg.fromTo(".best-of-us .animation-third", { scale: 0.8 }, { scale: 1,delay:.4 }, "<");
+        scrubImg.fromTo(".best-of-us .animation-first", { borderRadius: 100 }, {borderRadius:0 }, "<");
+        scrubImg.fromTo(".best-of-us .animation-second", {  borderRadius: 100 }, {  borderRadius: 0,delay:.2 }, "<");
+        scrubImg.fromTo(".best-of-us .animation-third", {  borderRadius: 100 }, {  borderRadius: 0,delay:.4 }, "<");
     }, []);
 
 
@@ -353,11 +352,11 @@ export const Home = () => {
                                     <h3 ref={cusTimeline3}>
                                         <img src={saveVector1} alt="blob" className='pup-vector' />
                                         <span>
-                                            <img src={frame1} alt="user with prop" className='animation-first'/>
-                                            <img src={frame2} alt="user with prop" className='animation-third'/>
+                                            <img src={frame3} alt="user with prop" className='animation-second'/>
                                         </span>
                                         <span>
-                                            <img src={frame3} alt="user with prop" className='animation-second'/>
+                                            <img src={frame1} alt="user with prop" className='animation-first'/>
+                                            <img src={frame2} alt="user with prop" className='animation-third'/>
                                         </span>
                                     </h3>
                                 </div>
