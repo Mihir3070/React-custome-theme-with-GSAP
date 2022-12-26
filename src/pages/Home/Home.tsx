@@ -145,9 +145,9 @@ export const Home = () => {
                 end: "0",
             },
         });
-        scrubImg.fromTo(".best-of-us .animation-first", { borderRadius: 100 }, {borderRadius:0 }, "<");
-        scrubImg.fromTo(".best-of-us .animation-second", {  borderRadius: 100 }, {  borderRadius: 0,delay:.2 }, "<");
-        scrubImg.fromTo(".best-of-us .animation-third", {  borderRadius: 100 }, {  borderRadius: 0,delay:.4 }, "<");
+        scrubImg.fromTo(".best-of-us .animation-first", { y: "10%" }, { y: "-10%" }, "<");
+        scrubImg.fromTo(".best-of-us .animation-second", { y: "15%" }, { y: "-12%" }, "<");
+        scrubImg.fromTo(".best-of-us .animation-third", { y: "10%" }, { y: "-10%", delay: .1 }, "<");
     }, []);
 
 
@@ -297,7 +297,7 @@ export const Home = () => {
                                 <Button variant='contained' className='hero-btn' title="Get Started">Get Started</Button>
                             </div>
                             <div className='hero-images'>
-                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3"/>
+                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3" />
                                 <img src={heroVector1} alt="Blob" className='top parallax' data-speed-x="10" data-speed-y="10" />
                                 <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="8" data-speed-y="8" />
                                 <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="6" data-speed-y="6" />
@@ -315,7 +315,7 @@ export const Home = () => {
                                 <Button variant='contained' className='hero-btn' title="Get Started">Get Started</Button>
                             </div>
                             <div className='hero-images'>
-                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3"/>
+                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3" />
                                 <img src={heroVector1} alt="Blob" className='top parallax' data-speed-x="10" data-speed-y="10" />
                                 <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="8" data-speed-y="8" />
                                 <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="6" data-speed-y="6" />
@@ -333,7 +333,7 @@ export const Home = () => {
                                 <Button variant='contained' className='hero-btn' title="Get Started">Get Started</Button>
                             </div>
                             <div className='hero-images'>
-                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3"/>
+                                <img src={heroImage} alt="hero" className='main-image parallax' data-speed-x="3" data-speed-y="3" />
                                 <img src={heroVector1} alt="Blob" className='top parallax' data-speed-x="10" data-speed-y="10" />
                                 <img src={heroVector2} alt="Blob" className='middle parallax' data-speed-x="8" data-speed-y="8" />
                                 <img src={heroVector3} alt="Blob" className='last parallax' data-speed-x="6" data-speed-y="6" />
@@ -351,13 +351,19 @@ export const Home = () => {
                                 <div className='showcase'>
                                     <h3 ref={cusTimeline3}>
                                         <img src={saveVector1} alt="blob" className='pup-vector' />
-                                        <span>
-                                            <img src={frame3} alt="user with prop" className='animation-second'/>
-                                        </span>
-                                        <span>
-                                            <img src={frame1} alt="user with prop" className='animation-first'/>
-                                            <img src={frame2} alt="user with prop" className='animation-third'/>
-                                        </span>
+                                        <div className='img-wrapper'>
+                                            <span>
+                                                <img src={frame3} alt="user with prop" className='animation-second' />
+                                            </span>
+                                        </div>
+                                        <div className='img-wrapper'>
+                                            <span>
+                                                <img src={frame1} alt="user with prop" className='animation-first' />
+                                            </span>
+                                            <span>
+                                                <img src={frame2} alt="user with prop" className='animation-third' />
+                                            </span>
+                                        </div>
                                     </h3>
                                 </div>
                             </Grid>

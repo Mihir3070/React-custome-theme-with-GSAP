@@ -267,8 +267,8 @@ header{
     img{display: block;}
     .main-image{position: relative;}
     .pup-vector{display: block; position: absolute; bottom: 21%; left: -6%; z-index: 1;}
-    h3{display: flex;align-items: center; gap: 30px; img{max-width: 100%;}}
-    span{display: flex;flex-direction: column;gap: 30px;}
+    h3{display: flex;align-items: center; gap: 30px; img{max-width: 100%;} span{overflow: hidden;}}
+    .img-wrapper{display: flex;flex-direction: column;gap: 30px;position: relative; span{height: 293px;}}
   }
   .advisor{padding: 50px 0 0 130px;
     .overline{margin-bottom: 18px;}

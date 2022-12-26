@@ -608,10 +608,17 @@ header .search-toggle img {
 .best-of-us .showcase h3 img {
   max-width: 100%;
 }
-.best-of-us .showcase span {
+.best-of-us .showcase h3 span {
+  overflow: hidden;
+}
+.best-of-us .showcase .img-wrapper {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: relative;
+}
+.best-of-us .showcase .img-wrapper span {
+  height: 293px;
 }
 .best-of-us .advisor {
   padding: 50px 0 0 130px;
