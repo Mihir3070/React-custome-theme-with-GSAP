@@ -250,8 +250,8 @@ header{
 .searchbar{
   position: fixed;top: 0;left: 0;right: 0; padding: 20px; z-index: 20; background-color: $navy-blue; 
   margin-top: -300px; transition: all 500ms ease;
-  .MuiInputBase-root{background-color: #FFFFFF; border-radius: 5px; padding: 10px 20px; max-width:500px;width: 100%; 
-    margin: 0 auto; display: flex; align-items: center;}
+  .MuiInputBase-root{background-color: #FFFFFF;@include themify($themes){background-color: themed('bodyBackground');} border-radius: 5px; padding: 10px 20px; max-width:500px;width: 100%; 
+    margin: 0 auto; display: flex; align-items: center; @include themify($themes){color: themed('lightTextColor');}}
   input::placeholder{opacity: 1;}
   input{margin-left: 10px;}
 }
@@ -425,7 +425,7 @@ footer{
   .footer-subtitle{font-weight: 500; font-size: 16px; line-height: 18px; color: #FFFFFF; margin-bottom: 11px;}
   .sign-up{
     display: flex; align-items: center; margin: 30px 0 43px; flex-wrap: wrap;
-    input{
+    input{ @include themify($themes){background-color: themed('bodyBackground');}
       width: 179px; margin-right:10px;opacity: 1;
       &:focus{
         border-color: $primary-color; box-shadow: 0px 4px 13px rgba(255,255,255, 0.08); background-color: #FFFFFF; color: $dark-text;
@@ -467,6 +467,9 @@ footer{
     .MuiOutlinedInput-input{background-color: #262626; color: #FFFFFF;}
     form .MuiFormControl-root{background-color: #262626;}
     .questions a:hover,.questions a:focus{color: #FFFFFF; text-decoration: underline;}
+  }
+  footer{
+    .sign-up{input{border-color: transparent; &:focus{background-color: #262626; border-color: #FFFFFF;} color: #FFFFFF;}}
   }
 }
 .dark.page-scrolled header{background-color: rgba(255,255,255, 0.08);}

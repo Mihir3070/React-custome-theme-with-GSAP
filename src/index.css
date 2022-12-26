@@ -570,6 +570,18 @@ header .theme-toggle .dark-mode-icon {
   display: flex;
   align-items: center;
 }
+.light .searchbar .MuiInputBase-root {
+  background-color: #FFFFFF;
+}
+.dark .searchbar .MuiInputBase-root {
+  background-color: #262626;
+}
+.light .searchbar .MuiInputBase-root {
+  color: #868686;
+}
+.dark .searchbar .MuiInputBase-root {
+  color: #FFFFFF;
+}
 .searchbar input::-moz-placeholder {
   opacity: 1;
 }
@@ -1218,6 +1230,12 @@ footer .sign-up input {
   margin-right: 10px;
   opacity: 1;
 }
+.light footer .sign-up input {
+  background-color: #FFFFFF;
+}
+.dark footer .sign-up input {
+  background-color: #262626;
+}
 footer .sign-up input:focus {
   border-color: #3064EB;
   box-shadow: 0px 4px 13px rgba(255, 255, 255, 0.08);
@@ -1327,6 +1345,14 @@ footer .footer-copy p {
 .dark .contact-us .questions a:hover, .dark .contact-us .questions a:focus {
   color: #FFFFFF;
   text-decoration: underline;
+}
+.dark footer .sign-up input {
+  border-color: transparent;
+  color: #FFFFFF;
+}
+.dark footer .sign-up input:focus {
+  background-color: #262626;
+  border-color: #FFFFFF;
 }
 
 .dark.page-scrolled header {
