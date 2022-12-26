@@ -1,9 +1,9 @@
-import { ThemeProvider} from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home/Home';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import myCustomTheme from './App.theme';
 
 
@@ -18,6 +18,10 @@ function App() {
     }
   };
   window.addEventListener('scroll', addScrollClass);
+
+
+
+  
   return (
 
     <>

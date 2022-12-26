@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import 'theme.scss';
+
 
 /*
 ------------------------------------------------------------
@@ -126,9 +128,7 @@ $light-text: #868686;
 $primary-color: #3064EB;
 $light-bg: #F3FAFF;
 $navy-blue: #142756;
-:export {
-  primaryColor: $primary-color;
-}
+
 
 .slick-prev:before, .slick-next:before{display: none;}
 .slick-arrow.slick-next, .slick-arrow.slick-prev{display: none !important;}
@@ -140,7 +140,8 @@ $navy-blue: #142756;
 --------------------------------------------------------------------------------------------------------*/
 .hero{
   padding: 102px 50px 55px; display: flex !important; align-items: center; justify-content: center; position: relative;
-  background-color: #F3FAFF;
+  @include themify($themes){
+    background-color: themed('containerBgColor'); }
   .vector-left{position: absolute;top: 130px; left: 0; display: block;}
   .vector-right{position: absolute; top: 0; right: 0; display: block;}
   .MuiContainer-root.MuiContainer-maxWidthLg{display: flex; align-items: center; max-width: 1284px; padding-left: 86px; justify-content: space-between;
@@ -148,7 +149,9 @@ $navy-blue: #142756;
   .hero-block{
     position: relative; 
     p{color: #3064EB; font-size: 16px; line-height: 18px; font-weight: 500; margin-bottom: 14px;}
-    h2{color: $dark-text;font-size: 54px;line-height: 64px;font-weight: 400; max-width: 452px; margin-bottom: 28px; min-width: 450px;
+    h2{color: $dark-text;@include themify($themes){
+      color: themed('textColor'); }
+      font-size: 54px;line-height: 64px;font-weight: 400; max-width: 452px; margin-bottom: 28px; min-width: 450px;
       strong{display: block;font-weight: 700;}
     }
     // .content{}
@@ -181,13 +184,16 @@ header{
   transition: all 300ms ease;
   padding: 28px 91px 28px 99px; z-index: 1; position: fixed; top: 0; left: 0; right: 0;
   .nav-toggle{min-width: 0; width: 46px; height: 46px; position: relative; display: none;
-    img{ position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+    svg{ position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
   }
+  .logo-link{position: relative;}
+  .dark-mode-logo{position: absolute; top: 0; opacity: 0;}
   .logo{display: block;width: 212px;height: 42px; transition: all 300ms ease;}
   .mobile-logo{width: 40px; height: 40px;display: none; transition: all 300ms ease;}
   .search-toggle{ min-width: 100px; height: 46px;margin-right: 24px;transition: all 300ms ease;
-    img{display: block;margin-right: 12px;}
+    svg{display: block;margin-right: 12px;}
   }
+  .theme-toggle{min-width: 0; width: 46px; height: 46px; position: relative; img{display: block;width: 24px;height: 24px;} .dark-mode-icon{opacity: 0; position: absolute;}}
 }
 .page-scrolled{
   header{
@@ -202,7 +208,7 @@ header{
 }
 .navbar{margin-left: auto;margin-right: auto;position: relative; flex-grow: 0; z-index: 20; transition: all 300ms ease;
   ul{display: flex;}
-  a{color: $dark-text;font-size: 15px;font-weight: 400;line-height: 18px; padding: 10px 30px; display: block; position: relative;
+  a{color: $dark-text; @include themify($themes){color: themed('textColor');} font-size: 15px;font-weight: 400;line-height: 18px; padding: 10px 30px; display: block; position: relative;
     &:after{content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 2px; background-color: $primary-color; width: 0; transition: all 300ms ease;}
     &:hover,&:focus{color: #3064EB;}
     &:hover:not(.active)::after{width: 50%;}
@@ -260,7 +266,7 @@ header{
 
 /* Advisor section
 --------------------------------------------------------------------------------------------------------*/
-.best-of-us{ padding: 98px 40px 100px; position: relative;
+.best-of-us{ padding: 98px 40px 100px; position: relative; overflow: hidden;
 .MuiContainer-root.MuiContainer-maxWidthLg{max-width: 1140px;}
   .showcase{
     display: flex; position: relative; left: -77px;
@@ -268,19 +274,20 @@ header{
     .main-image{position: relative;}
     .pup-vector{display: block; position: absolute; bottom: 21%; left: -6%; z-index: 1;}
     h3{display: flex;align-items: center; gap: 30px; img{max-width: 100%;} span{overflow: hidden;}}
-    .img-wrapper{display: flex;flex-direction: column;gap: 30px;position: relative; span{height: 293px;}}
+    .img-wrapper{display: flex;flex-direction: column;gap: 30px;position: relative; span{height: 293px;border-radius: 20px;}}
   }
   .advisor{padding: 50px 0 0 130px;
     .overline{margin-bottom: 18px;}
     h2{
-      font-weight: 500; font-size: 40px; line-height: 46px; color: $dark-text; margin-bottom: 18px; max-width: 460px;
+      font-weight: 500; font-size: 40px; line-height: 46px; color: $dark-text;@include themify($themes){
+        color: themed('textColor'); } margin-bottom: 18px; max-width: 460px;
     }
-    p{font-weight: 400; font-size: 15px; line-height: 26px; color: $light-text; margin-bottom: 18px;}
+    p{font-weight: 400; font-size: 15px; line-height: 26px; color: $light-text; @include themify($themes){color: themed('infoText');} margin-bottom: 18px;}
     p:last-child{background-color: red;}
 
     .MuiGrid-root.MuiGrid-container{margin-bottom: 30px;}
       ul{
-        li{font-weight: 400; font-size: 15px; line-height: 26px; color: $light-text; display: flex; align-items: flex-start; margin-bottom: 10px;
+        li{font-weight: 400; font-size: 15px; line-height: 26px; color: $light-text; @include themify($themes){color: themed('infoText');} display: flex; align-items: flex-start; margin-bottom: 10px;
           &::before{content: url('./assets/images/inside-card-icon.svg'); margin-right: 12px;}
       }}
       ul:not(:last-child){margin-right: 90px;}
@@ -292,18 +299,18 @@ header{
 /* Data section
 --------------------------------------------------------------------------------------------------------*/
 
-.statistics{position: relative; padding: 60px 50px 100px; background-color: #F3FAFF; text-align: center;
-  h2{font-weight: 500;font-size: 40px; line-height: 46px; color: $dark-text; margin-bottom: 28px;}
+.statistics{position: relative; padding: 60px 50px 100px; @include themify($themes){background-color: themed('containerBgColor'); } text-align: center;
+  h2{font-weight: 500;font-size: 40px; line-height: 46px; color: $dark-text;@include themify($themes){color: themed('textColor'); } margin-bottom: 28px;}
   .MuiContainer-root.MuiContainer-maxWidthLg{max-width: 990px; padding-left: 60px;}
   .data-block{text-align: center; display: block; min-width: 126px; min-height: 138px; padding: 39px 60px 0 0; position: relative;
-    h2{font-weight: 700;font-size: 55px; line-height: 64px; color: $dark-text; margin-bottom: 12px;}
-    p{font-weight: 500;font-size: 20px; line-height: 24px; color: $dark-text;}
+    h2{font-weight: 700;font-size: 55px; line-height: 64px; color: $dark-text; @include themify($themes){color: themed('textColor');} margin-bottom: 12px;}
+    p{font-weight: 500;font-size: 20px; line-height: 24px; color: $dark-text; @include themify($themes){color: themed('textColor');}}
     img{position: absolute;top: 0;left: 0;}
   }
 }
 /* work-process section
 --------------------------------------------------------------------------------------------------------*/
-.work-process{
+.work-process{overflow: hidden;
   background-color: $navy-blue;padding: 98px 40px 105px; position: relative; text-align: center;
   .overline{color: #FFFFFF;}
   h2{font-weight: 500;font-size:40px; line-height: 46px; color: #FFFFFF; margin-bottom: 30px;}
@@ -323,15 +330,16 @@ header{
 /* Pricing card section
 --------------------------------------------------------------------------------------------------------*/
 .pricing-container{
-  background-color: #F3FAFF; padding: 96px 0 100px; text-align: center;
-  .overline{color: $dark-text;}
-  h2{font-weight: 500; font-size: 40px; line-height: 46px; color: $dark-text; margin-bottom: 34px;}
+  @include themify($themes){background-color: themed('containerBgColor');} padding: 96px 0 100px; text-align: center;
+  .overline{color: $dark-text; @include themify($themes){color: themed('textColor');}}
+  h2{font-weight: 500; font-size: 40px; line-height: 46px; color: $dark-text;@include themify($themes){color: themed('textColor');} margin-bottom: 34px;}
   .MuiCardContent-root,.MuiCardContent-root:last-child{padding: 38px 39px 40px;
     border-radius: 0 0 10px 10px;
     border: 2px solid transparent;
     border-top: none;
     &:hover{border: 2px solid $primary-color; border-top: none;}
    }
+   .MuiCard-root{@include themify($themes){background-color: themed('cardBgColor');}}
 }
 .pricing-card{
   position: relative; 
@@ -343,7 +351,7 @@ header{
       height: 33px; width: 170px; background-color: #FF9E2D;}
   }
     h3{
-      font-weight: 500; font-size: 65px; line-height: 76px; color: $dark-text; display: flex; justify-content: center; margin-bottom: 25px;
+      font-weight: 500; font-size: 65px; line-height: 76px; color: $dark-text; @include themify($themes){color: themed('textColor');}display: flex; justify-content: center; margin-bottom: 25px;
       &::before{content: '$'; display: block; font-size: 18px;font-weight: 400;line-height: 21px; top: auto; bottom: -13px; left: -4px; position: relative;}
       span{display: block; font-size: 18px; margin-top: auto; margin-bottom: 10px; font-weight: 400; line-height: 21px;}
       .bold-span{font-weight: 500; font-size: 65px; line-height: 76px;margin: 0;}
@@ -351,7 +359,7 @@ header{
   ul{
     margin: 0 0 11px; min-height: 212px;
     li{
-      font-weight: 400; font-size: 15px; line-height: 20px; color: $light-text; display: flex; align-items: flex-start; 
+      font-weight: 400; font-size: 15px; line-height: 20px; @include themify($themes){color: themed('lightTextColor');}  display: flex; align-items: flex-start; 
       padding: 0 0 20px;
       &::before{content: url('./assets/images/inside-card-icon.svg'); display: block; align-self: flex-start; width: 20px; height: 20px;
         margin-right: 10px;}
@@ -365,10 +373,10 @@ header{
   padding: 96px 0 100px;
   background-image: url('./assets/images/bg-map.png');background-size: cover;background-repeat: no-repeat;
   .questions{
-    h2{font-weight: 500;font-size: 40px;line-height: 46px;color: $dark-text; margin-bottom: 14px;}
-    p{font-weight: 400;font-size: 15px;line-height: 26px;color: $light-text; max-width: 351px; margin-bottom: 22px;}
+    h2{font-weight: 500;font-size: 40px;line-height: 46px;color: $dark-text; @include themify($themes){color: themed('textColor');} margin-bottom: 14px;}
+    p{font-weight: 400;font-size: 15px;line-height: 26px;color: $light-text; @include themify($themes){color: themed('infoText');} max-width: 351px; margin-bottom: 22px;}
     ul{
-      li,a{display: flex;align-items: center;font-weight: 400; font-size: 15px; line-height: 26px; color: $light-text;}
+      li,a{display: flex;align-items: center;font-weight: 400; font-size: 15px; line-height: 26px; color: $light-text; @include themify($themes){color: themed('infoText');}}
       li{ padding: 10px 0;
         img{display: block; width: 25px;height: 25px; margin-right: 14px;}
         a{&:hover{color: $dark-text; text-decoration: underline;}}
@@ -376,7 +384,7 @@ header{
     }
   }
   form{ max-width: 540px; position: relative; left: 13px;
-    .MuiFormControl-root{background-color: #FFFFFF;}
+    .MuiFormControl-root{background-color: #FFFFFF;border-radius: 5px;}
     .MuiInputLabel-root{font-weight: 400;font-size: 15px; line-height: 26px; color: #BEBEBE;}
     .MuiInputLabel-root.MuiInputLabel-formControl {
       transform: translate(14px, 12px) scale(1);
@@ -386,7 +394,7 @@ header{
     .MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-shrink {
       transform: translate(15px, -9px) scale(0.75);
     }
-    p{font-weight: 400;font-size: 15px; line-height: 26px; color: $dark-text; margin-bottom: 23px;}
+    p{font-weight: 400;font-size: 15px; line-height: 26px; color: $dark-text;@include themify($themes){color: themed('textColor');} margin-bottom: 23px;}
     .dropdown-arrow{display: block;margin-right: 20px; position: absolute; right: 0;}
     .MuiInputBase-inputMultiline{padding: 0;}
     textarea{height: 75px !important;}
@@ -438,6 +446,33 @@ footer{
     
   }
 }
+
+
+
+/* Dark Mode Css
+--------------------------------------------------------------------------------------------*/ 
+.dark{background-color: #262626;
+  header {
+    .dark-mode-logo{opacity: 1;}
+    .search-toggle{@include themify($themes){color: themed('textColor');} svg path{fill: #FFFFFF;}}
+    .theme-toggle{.dark-mode-icon{opacity: 1;}}
+    .nav-toggle{svg path{fill: #FFFFFF;}}
+
+    .nav-toggle:hover,.nav-toggle:focus,
+    .theme-toggle:hover,.theme-toggle:focus,
+    .search-toggle:hover,.search-toggle:focus{background-color: rgba(255,255,255, 0.08);}
+  }
+  .pricing-container .MuiCard-root{ border: 0;}  
+  .contact-us{
+    .MuiOutlinedInput-input{background-color: #262626; color: #FFFFFF;}
+    form .MuiFormControl-root{background-color: #262626;}
+    .questions a:hover,.questions a:focus{color: #FFFFFF; text-decoration: underline;}
+  }
+}
+.dark.page-scrolled header{background-color: rgba(255,255,255, 0.08);}
+
+
+
 
 /* All media 
 --------------------------------------------------------------------------------------------*/ 
@@ -677,6 +712,7 @@ footer{
 @media (max-width:575px) {
   
   header{
+    padding: 12px;
     .logo{display: none;}
     .mobile-logo{display: block; width: 38px; height: 38px;}
     .btn-secondary{width: 150px; height: 40px; font-size: 14px;}
@@ -686,7 +722,7 @@ footer{
     .btn-secondary{width: 150px; height: 40px;}
     .nav-toggle > img{width: 28px; height: 28px;}
   }
-  .page-scrolled .hero header{padding: 12px;}
+  .page-scrolled header{padding: 12px;}
 
   .hero{
     padding: 150px 30px;

@@ -350,7 +350,7 @@ export const Home = () => {
                             <Grid item xl={5} xs={12}>
                                 <div className='showcase'>
                                     <h3 ref={cusTimeline3}>
-                                        <img src={saveVector1} alt="blob" className='pup-vector' />
+                                        <img src={saveVector1} alt="blob" className='pup-vector parallax' data-speed-x="5" data-speed-y="10"/>
                                         <div className='img-wrapper'>
                                             <span>
                                                 <img src={frame3} alt="user with prop" className='animation-second' />
@@ -399,7 +399,7 @@ export const Home = () => {
                             </Grid>
                         </Grid>
                     </Container>
-                    <img src={saveVector2} alt="vector" className='section-vector' />
+                    <img src={saveVector2} alt="vector" className='section-vector parallax' data-speed-x="8" data-speed-y="6"/>
                 </section>
                 {/* --------------- advisor section end---------------------- */}
 
@@ -476,8 +476,8 @@ export const Home = () => {
 
                 {/* ----------------- work process start ---------- */}
                 <section className='work-process' ref={cusTimeline5}>
-                    <img src={workVectorLeft} alt="vector" className='vector-left' />
-                    <img src={workVectorRight} alt="vector" className='vector-right' />
+                    <img src={workVectorLeft} alt="vector" className='vector-left parallax' data-speed-x="5" data-speed-y="3"/>
+                    <img src={workVectorRight} alt="vector" className='vector-right parallax' data-speed-x="4" data-speed-y="2"/>
                     <h6 className='overline'>Work Process</h6>
                     <h2>How do we works ?</h2>
                     <Container>

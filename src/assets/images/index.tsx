@@ -50,3 +50,6 @@ export const balloon = require('./balloon-emoji.svg').default;
 export const users = require('./users-emoji.svg').default;
 
 export const rightTriangleImage = require('./right-triangle-leftside.svg').default;
+export const lightModeIC = require('./light-mode-ic.svg').default;
+export const darkModeIC = require('./dark-mode-ic.svg').default;
+export const logoWhite = require('./logo-white.svg').default;
