@@ -413,7 +413,7 @@ export const Home = () => {
                                 <div className='data-block'>
                                     <img src={happy} alt="emoji" />
                                     <h2>
-                                        <CountUp end={10} suffix="K" enableScrollSpy >
+                                        <CountUp end={10} suffix="K" enableScrollSpy scrollSpyOnce >
                                             {({ countUpRef, start }) => (
                                                 <>
                                                     <span ref={countUpRef} />
@@ -428,7 +428,7 @@ export const Home = () => {
                                 <div className='data-block'>
                                     <img src={trophy} alt="emoji" />
                                     <h2>
-                                        <CountUp end={15} suffix="+" enableScrollSpy >
+                                        <CountUp end={15} suffix="+" enableScrollSpy scrollSpyOnce>
                                             {({ countUpRef, start }) => (
                                                 <>
                                                     <span ref={countUpRef} />
@@ -443,7 +443,7 @@ export const Home = () => {
                                 <div className='data-block'>
                                     <img src={balloon} alt="emoji" />
                                     <h2>
-                                        <CountUp end={10} suffix="+" enableScrollSpy >
+                                        <CountUp end={10} suffix="+" enableScrollSpy scrollSpyOnce>
                                             {({ countUpRef, start }) => (
                                                 <>
                                                     <span ref={countUpRef} />
@@ -458,7 +458,7 @@ export const Home = () => {
                                 <div className='data-block'>
                                     <img src={users} alt="emoji" />
                                     <h2>
-                                        <CountUp end={50} suffix="K" enableScrollSpy >
+                                        <CountUp end={50} suffix="K" enableScrollSpy scrollSpyOnce>
                                             {({ countUpRef, start }) => (
                                                 <>
                                                     <span ref={countUpRef} />
@@ -526,7 +526,7 @@ export const Home = () => {
                                             <li>100 Mail Previews</li>
                                         </ul>
                                         <h3>
-                                            <CountUp end={9} enableScrollSpy >
+                                            <CountUp end={9} enableScrollSpy scrollSpyOnce>
                                                 {({ countUpRef, start }) => (
                                                     <>
                                                         <span ref={countUpRef} className="bold-span" />
@@ -551,7 +551,7 @@ export const Home = () => {
                                             <li>Fully Responsive</li>
                                         </ul>
                                         <h3>
-                                            <CountUp end={29} enableScrollSpy >
+                                            <CountUp end={29} enableScrollSpy scrollSpyOnce>
                                                 {({ countUpRef, start }) => (
                                                     <>
                                                         <span ref={countUpRef} className="bold-span" />
@@ -576,7 +576,7 @@ export const Home = () => {
                                             <li>500 Contacts Per Client</li>
                                         </ul>
                                         <h3>
-                                            <CountUp end={69} enableScrollSpy >
+                                            <CountUp end={69} enableScrollSpy scrollSpyOnce>
                                                 {({ countUpRef, start }) => (
                                                     <>
                                                         <span ref={countUpRef} className="bold-span" />

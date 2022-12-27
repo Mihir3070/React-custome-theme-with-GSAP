@@ -367,6 +367,7 @@ header{
   }
   button{transition: all 300ms ease;}
 }
+
 /* Contact us section 
 --------------------------------------------------------------------------------------------------------*/
 .contact-us{
@@ -674,8 +675,10 @@ footer{
       .main-image{height: 360px;}
       .pup-vector{height: 60px;}
     .advisor div ul:not(:last-child){margin-right: 0px;}
+    .img-wrapper span{height: 190px;}
+    .img-wrapper{gap: 16px;}
     }
-    .showcase h3{flex-direction: column; span img{width: 200px;height: 230px;}}
+    .showcase h3{flex-direction: column; gap: 16px; span img{width: 200px;height: 230px;}}
     .advisor div ul:not(:last-child){margin-right: 15px;}
     .advisor{
       div{

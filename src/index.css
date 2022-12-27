@@ -1715,8 +1715,15 @@ footer .footer-copy p {
   .best-of-us .showcase .advisor div ul:not(:last-child) {
     margin-right: 0px;
   }
+  .best-of-us .showcase .img-wrapper span {
+    height: 190px;
+  }
+  .best-of-us .showcase .img-wrapper {
+    gap: 16px;
+  }
   .best-of-us .showcase h3 {
     flex-direction: column;
+    gap: 16px;
   }
   .best-of-us .showcase h3 span img {
     width: 200px;
