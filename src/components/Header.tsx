@@ -102,15 +102,6 @@ export const Header = () => {
                                     <ListItem className='mobile-nav'>
                                         <NavLink to="-" onClick={closeSidebar} title='Contact us'>Contact Us</NavLink>
                                     </ListItem>
-                                    <ListItem >
-                                        <NavLink to="-" onClick={closeSidebar} title='Extra link 1'>Extra link 1</NavLink>
-                                    </ListItem >
-                                    <ListItem >
-                                        <NavLink to="-" onClick={closeSidebar} title='Extra link 2'>Extra link 2</NavLink>
-                                    </ListItem >
-                                    <ListItem >
-                                        <NavLink to="-" onClick={closeSidebar} title='Extra link 3'>Extra link 3</NavLink>
-                                    </ListItem >
                                 </List>
                             </Box>
                         </Drawer>
